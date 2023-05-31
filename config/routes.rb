@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "items#index"
+  root "categories#index"
 
+  resources :categories, only: [:index, :show]
   resources :items, only: [:index, :show]
-  post "place_order", to: "items#place_order"
+  post "/orders", to: "orders#place_order"
 end
