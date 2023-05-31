@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
+    belongs_to :category
 
-    # Validations
-    validates :name, :price, :category, presence: true
-    validates :price, numericality: { greater_than: 0 }
 
-    # Enums
-    enum category: [:burger, :pizza, :toast, :main_course, :beverage, :dessert]
+    validates :name, presence: true
+    validates :price, presence: true
+    validates :description, presence: true
+    validates :image_url, presence: true
 end
