@@ -3,4 +3,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root "items#index"
+
+  resources :items, only: [:index, :show]
+  post "place_order", to: "items#place_order"
 end
